@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 #
 ### FUNCTIONALITY ###
-# Compress PDF files in the folder where this script resides via Ghostscript
-# 1. Create a sub-folder, ./compressed, and put the resultant compressed ones in it
-# 2. Compress files with any PDF extentions i.e., .pdf, .PDF, .pDf and so on
-# 3. Optional compression parameter, namely, prepress, ebook (default) and screen - in the descending order of quality
-# 4. Log output in the sub-folder with the compressed file names and any error message
-# N.B. Make sure to make this script excutable via chmod +x or 755, after copying!
+# Compress PDF files via Ghostscript in the folder where this script resides
+# 1. Create a sub-folder, ./compressed, and put the resultant compressed ones in it,
+# 2. Compress files with any PDF extensions i.e., .pdf, .PDF, .pDf and so on,
+# 3. Optional compression parameter to be supplied, namely, prepress, ebook (default) and screen - in the descending order of quality,
+# 4. Log output with the compressed file names and any error message in the sub-folder, and
+# N.B. Make sure to make this script executable via chmod +x or 755, after copying!
 
 shopt -s nocaseglob
 # Bash matches filenames in a case-insensitive fashion when performing filename expansion
