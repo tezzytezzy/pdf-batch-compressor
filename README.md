@@ -1,7 +1,8 @@
 # 📦 PDF Batch Processor
 
-[![Release](https://img.shields.io/github/v/release/tezzytezzy/pdf-batch-processor)](https://github.com/tezzytezzy/pdf-batch-processor/releases)  
+![GitHub Release](https://img.shields.io/github/v/release/tezzytezzy/pdf-batch-compressor)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 
 A Bash utility to optimize, monochrome-ify, and strip content from PDFs in bulk.
 
@@ -116,6 +117,8 @@ hp@HP:~$ gs --version
 ## 📊 Sample Compression  
 | PDF File               | File Size | Ratio (%) |
 | -----------------------| --------  | ----------|    
-| original (coloured).pdf| 218.4 kB  | --        |
-| screen_only.pdf        | 30.2 kB   | 13.82     |
-| screen_and_gray.pdf    | 24.8 kB   | 11.36     |
+| Original*              | 218.4 kB  | --        |
+| screen preset only     | 30.2 kB   | 13.82     |
+| screen preset and gray | 24.8 kB   | 11.36     |
+
+*This is a one-page PDF containing four equally-sized, full-color portrait images and no text.
