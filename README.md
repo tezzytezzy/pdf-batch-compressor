@@ -119,8 +119,8 @@ hp@HP:~$ gs --version
 | PDF File               | File Size | Ratio (%) |
 | -----------------------| --------  | ----------|    
 | Original*              | 218.4 kB  | --        |
-| screen preset only     | 30.2 kB   | 13.82     |
-| screen preset and gray | 24.8 kB   | 11.36     |
+| Screen preset only     | 30.2 kB   | 13.82     |
+| Screen preset and gray | 24.8 kB   | 11.36     |
 
 *This is a one-page PDF containing four equally-sized, full-color portrait images and no text.
 
