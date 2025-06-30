@@ -133,25 +133,37 @@ get_size() {
   fi
 }
 
+# ─── Define common Ghostscript options (without input/output) ─────────────
+gs_cmd=(
+  gs -q -dNOPAUSE -dBATCH -dQUIET
+  -sDEVICE=pdfwrite
+  -dPDFSETTINGS="$preset"
+  -sColorConversionStrategy="$color"
+  "${filters[@]}"
+)
+
+# ─── Echo the exact command about to run ───────────────────────────────
+echo "Running Ghostscript command:"
+printf '  %q ' "${gs_cmd[@]}"
+echo && echo
+
 # ─── Loop PDF files ─────────────────────────────────────────────────────────
 shopt -s nullglob
 for input in "$script_dir"/*.pdf; do
   filename=$(basename "$input")
   output="$out_dir/$filename"
 
-  # compress quietly
-  gs -q -dNOPAUSE -dBATCH -dQUIET \
-     -sDEVICE=pdfwrite \
-     -dPDFSETTINGS="$preset" \
-     -sColorConversionStrategy="$color" \
-     "${filters[@]}" \
-     -o "$output" "$input"
+  # Build full command by appending output & input
+  exec_cmd=( "${gs_cmd[@]}" -o "$output" "$input" )
+
+  # execute it
+  "${exec_cmd[@]}"
 
   # sizes & ratio
   orig=$(get_size "$input")
   comp=$(get_size "$output")
   if [ "$orig" -gt 0 ]; then
-    ratio=$(awk -v o="$orig" -v c="$comp" 'BEGIN{ printf "%.2f", (c/o)*100 }')
+    ratio=$(awk -v o="$orig" -v c="$comp" 'BEGIN { printf "%.2f", (c/o)*100 }')
   else
     ratio="N/A"
   fi
