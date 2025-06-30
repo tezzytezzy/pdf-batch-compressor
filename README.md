@@ -17,6 +17,7 @@ A Bash utility to optimize, monochrome-ify, and strip content from PDFs in bulk.
 5. [Log](#-log)  
 6. [Tested Environment](#-tested-environment)
 7. [Sample Compression](#-sample-compression)
+8. [References](#-references)
 ---
 
 ## 🌟 Features
@@ -122,3 +123,12 @@ hp@HP:~$ gs --version
 | screen preset and gray | 24.8 kB   | 11.36     |
 
 *This is a one-page PDF containing four equally-sized, full-color portrait images and no text.
+
+---
+
+## 📚 References
+- [Optimizing PDFs with Ghostscript](https://ghostscript.com/blog/optimizing-pdfs.html)
+- [Switches for PDF Files](https://ghostscript.readthedocs.io/en/latest/Use.html#switches-for-pdf-files)
+- [The family of PDF and PostScript output devices](https://ghostscript.readthedocs.io/en/latest/VectorDevices.html#the-family-of-pdf-and-postscript-output-devices)
+
+
